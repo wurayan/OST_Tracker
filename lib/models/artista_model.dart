@@ -1,7 +1,9 @@
+import 'package:ost_tracker_og/models/genero_model.dart';
+
 class Artista {
   String id;
   String nome;
-  List<String> generos;
+  List<Genero> generos;
   String dono;
   bool publico;
 
