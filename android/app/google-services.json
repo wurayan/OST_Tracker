@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "40491379716",
+    "firebase_url": "https://ost-tracker-i-default-rtdb.firebaseio.com",
+    "project_id": "ost-tracker-i",
+    "storage_bucket": "ost-tracker-i.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40491379716:android:13a924114bcd6ae0585951",
+        "android_client_info": {
+          "package_name": "com.example.ost_tracker_og"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "40491379716-4t7p4lal60t9r9kt2iv5f106m6pda07r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ost_tracker_og",
+            "certificate_hash": "101788afc34ecb05388ce5aae2b8ca31f4eb304d"
+          }
+        },
+        {
+          "client_id": "40491379716-qo48fpnoi5bkvbcgkes53vjptj1qa3v2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlunTjrks01DzXG-mFa7TGRX4J_9_rP_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "40491379716-qo48fpnoi5bkvbcgkes53vjptj1qa3v2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "40491379716-3nnten4s7nsgbtb3le9toaj5f53pgdob.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ostTracker.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
