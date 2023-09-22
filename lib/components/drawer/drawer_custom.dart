@@ -4,6 +4,7 @@ import 'package:ost_tracker_og/cubit/usuario_cubit.dart';
 import 'package:ost_tracker_og/decoration/shadows.dart';
 import 'package:ost_tracker_og/decoration/theme.dart';
 import 'package:ost_tracker_og/screens/about_screen.dart';
+import 'package:ost_tracker_og/screens/artistas/artista_screen.dart';
 import 'package:ost_tracker_og/screens/generos/genero_screen.dart';
 import 'package:ost_tracker_og/screens/home_screen.dart';
 import 'package:ost_tracker_og/screens/musica/musica_screen.dart';
@@ -46,11 +47,17 @@ class DrawerCustom extends StatelessWidget {
               function: () => Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => MusicaScreen(),
+                  builder: (context) => const MusicaScreen(),
                 ),
               ),
             ),
-            DrawerItem(title: "Artistas", function: () {}),
+            DrawerItem(
+                title: "Artistas",
+                function: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ArtistaScreen(),
+                    ))),
             DrawerItem(
               title: "Tags",
               function: () => Navigator.push(

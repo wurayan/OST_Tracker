@@ -8,6 +8,7 @@ import 'package:ost_tracker_og/components/loading.dart';
 import 'package:ost_tracker_og/cubit/artista_cubit.dart';
 import 'package:ost_tracker_og/cubit/generic_state.dart';
 import 'package:ost_tracker_og/screens/artistas/assets/artista_card.dart';
+import 'package:ost_tracker_og/screens/artistas/create_artista.dart';
 
 class ArtistaScreen extends StatefulWidget {
   const ArtistaScreen({super.key});
@@ -32,7 +33,13 @@ class _ArtistaScreenState extends State<ArtistaScreen> {
         title: "Artistas",
         activeSearch: true,
       ),
-      floatingActionButton: Fab(title: "ADD ARTISTA", function: () {}),
+      floatingActionButton: Fab(
+          title: "ADD ARTISTA",
+          function: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => CreateArtista(),
+              ))),
       drawer: const DrawerCustom(),
       body: BlocBuilder<ArtistaCubit, GenericState>(
         bloc: _artista,

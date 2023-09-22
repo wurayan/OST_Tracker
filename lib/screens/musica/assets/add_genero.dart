@@ -41,7 +41,7 @@ class _GeneroListState extends State<GeneroList> {
                 ));
           } else {
             return GeneroChip(
-              genero: generos[index],
+              genero: generos[index-1],
             );
           }
         },

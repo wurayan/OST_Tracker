@@ -24,4 +24,22 @@ class Genero {
         "dono": genero.dono,
         "publico": genero.publico,
       };
+
+  @override
+  String toString() {
+    return "$id\n$nome\n$dono";
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (other.runtimeType != runtimeType) return false;
+    return other is Genero &&
+      other.id==id&&
+      other.nome==nome&&
+      other.dono==dono&&
+      other.publico==publico; 
+  }
+
+  @override
+  int get hashCode => Object.hash(id, nome, dono);
 }

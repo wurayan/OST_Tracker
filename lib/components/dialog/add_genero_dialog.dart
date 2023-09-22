@@ -85,7 +85,6 @@ class _AddGeneroDialogState extends State<AddGeneroDialog> {
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Wrap(
-                  // spacing: 0,
                   runSpacing: 6,
                   children: [..._chipBuilder(state.generos)],
                 ),
