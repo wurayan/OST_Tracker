@@ -48,7 +48,7 @@ class _BuscarMusicasState extends State<BuscarMusicas> {
       ),
       drawer: const DrawerCustom(),
       floatingActionButton: Fab(
-          title: "      VOLTAR      ", function: () => Navigator.pop(context)),
+          title: "      VOLTAR      ", function: () => Navigator.pop(context, escolhidas)),
       body: BlocBuilder<MusicaCubit, MusicaStates>(
         bloc: _musica,
         builder: (context, state) {
@@ -65,9 +65,12 @@ class _BuscarMusicasState extends State<BuscarMusicas> {
                   itemCount: state.musicas.length,
                   itemBuilder: (context, index) {
                     Musica musica = state.musicas[index];
-                    return MusicaCardMini(
-                      musica: musica,
-                      navigator: () => _addMusica(musica),
+                    return Offstage(
+                      offstage: escolhidas.contains(musica.id),
+                      child: MusicaCardMini(
+                        musica: musica,
+                        navigator: () => _addMusica(musica),
+                      ),
                     );
                   }),
             );

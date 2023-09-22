@@ -3,7 +3,9 @@ import 'package:ost_tracker_og/decoration/theme.dart';
 
 class ButtonRow extends StatelessWidget {
   final Function function;
-  const ButtonRow({super.key, required this.function});
+  final String voltar;
+  final String avancar;
+  const ButtonRow({super.key, required this.function, this.avancar="SALVAR", this.voltar="CANCELAR"});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class ButtonRow extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () => Navigator.pop(context, false),
               child: Text(
-                "CANCELAR",
+                voltar,
                 style: CustomTextTheme.botoes,
               ),
             ),
@@ -29,7 +31,7 @@ class ButtonRow extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () => function(),
               child: Text(
-                "SALVAR",
+                avancar,
                 style: CustomTextTheme.botoes,
               ),
             ),

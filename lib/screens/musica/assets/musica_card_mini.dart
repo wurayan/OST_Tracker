@@ -8,7 +8,13 @@ import 'package:ost_tracker_og/utils/utils.dart';
 class MusicaCardMini extends StatelessWidget {
   final Musica musica;
   final Function? navigator;
-  const MusicaCardMini({super.key, required this.musica, this.navigator});
+  final Function? delete;
+  const MusicaCardMini({
+    super.key,
+    required this.musica,
+    this.navigator,
+    this.delete,
+  });
 
   _details(context) {
     Navigator.push(
@@ -25,6 +31,7 @@ class MusicaCardMini extends StatelessWidget {
     final double height = MediaQuery.sizeOf(context).height;
     return GestureDetector(
       onTap: () => navigator == null ? _details(context) : navigator!(),
+      onLongPress: () => delete != null ? delete!() : () {},
       child: Padding(
         padding: const EdgeInsets.only(bottom: 16),
         child: Container(
