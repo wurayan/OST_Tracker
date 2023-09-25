@@ -59,7 +59,7 @@ class MyDelegate extends MultiChildLayoutDelegate {
     // Carefully position each child until we run out of space.
     Offset offset = Offset.zero;
     for (int i = 0; i < _childrenCount; i++) {
-      if (offset.dx + childrenSizes[i].width < size.width) {
+      if (offset.dx + childrenSizes[i].width + 30 < size.width) {
         positionChild(i, offset);
         offset += Offset(childrenSizes[i].width, 0);
       } else {
@@ -71,5 +71,5 @@ class MyDelegate extends MultiChildLayoutDelegate {
   }
 
   @override
-  bool shouldRelayout(oldDelegate) => false;
+  bool shouldRelayout(oldDelegate) => true;
 }

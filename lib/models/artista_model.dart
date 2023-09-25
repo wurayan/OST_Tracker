@@ -29,7 +29,7 @@ class Artista {
 
   static toMap(Artista artista) => {
         "nome": artista.nome,
-        "generos": artista.generos,
+        "generos": artista.generos.map((e) => e.id).toList(),
         "dono": artista.dono,
         "publico": artista.publico,
       };

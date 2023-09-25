@@ -10,7 +10,7 @@ class GeneroChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 12),
+      padding: const EdgeInsets.only(right: 8),
       child: Chip(
         label: Text(
           genero.nome,

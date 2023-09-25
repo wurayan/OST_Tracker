@@ -15,7 +15,6 @@ class _GeneroWrapState extends State<GeneroWrap> {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      // spacing: 6,
       runSpacing: 8,
       children: [..._generoChipBuilder()],
     );

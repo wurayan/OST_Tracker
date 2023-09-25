@@ -34,12 +34,13 @@ class _ArtistaScreenState extends State<ArtistaScreen> {
         activeSearch: true,
       ),
       floatingActionButton: Fab(
-          title: "ADD ARTISTA",
-          function: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => CreateArtista(),
-              ))),
+        title: "ADD ARTISTA",
+        function: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => CreateArtista(),
+            )).then((value) => value == true ? _artista.getArtistas() : null),
+      ),
       drawer: const DrawerCustom(),
       body: BlocBuilder<ArtistaCubit, GenericState>(
         bloc: _artista,
@@ -51,10 +52,13 @@ class _ArtistaScreenState extends State<ArtistaScreen> {
           } else if (state is ArtistaEmpty) {
             return Empty(msg: state.msg);
           } else if (state is ArtistaSuccess) {
-            return ListView.builder(
-              itemCount: state.artistas.length,
-              itemBuilder: (context, index) =>
-                  ArtistaCard(artista: state.artistas[index]),
+            return Padding(
+              padding: const EdgeInsets.fromLTRB(12, 32, 12, 0),
+              child: ListView.builder(
+                itemCount: state.artistas.length,
+                itemBuilder: (context, index) =>
+                    ArtistaCard(artista: state.artistas[index]),
+              ),
             );
           } else {
             return const SizedBox();

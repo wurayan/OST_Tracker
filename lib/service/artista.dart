@@ -19,10 +19,9 @@ class ArtistaFirestore {
     for (var artista in res.docs) {
       Map<String, dynamic> map = artista.data();
       map["id"] = artista.id;
-      map["generos"] = Future.wait(List.from(map["generos"])
+      map["generos"] = await Future.wait(List.from(map["generos"])
           .map((e) async => await _genero.getOnlyGenero(e))
           .toList());
-      print(map["generos"]);
       artistas.add(Artista.fromMap(map));
     }
     return artistas;
