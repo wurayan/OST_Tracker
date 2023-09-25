@@ -48,7 +48,7 @@ class _MusicaScreenState extends State<MusicaScreen> {
           MaterialPageRoute(
             builder: (context) => CreateMusica(),
           ),
-        ),
+        ).then((value) => _musica.getMusicas()),
       ),
       drawer: const DrawerCustom(),
       body: BlocBuilder<MusicaCubit, MusicaStates>(
