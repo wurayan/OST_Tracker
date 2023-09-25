@@ -9,8 +9,9 @@ class UsuarioFirestore {
   Map<String, dynamic> musicaToMap(Musica musica) => {
         "id": musica.id,
         "anotacoes": musica.anotacoes,
-        "tags": musica.tags!=null?musica.tags!.map((e) => e.id).toList():[],
-        "generos": musica.generos
+        "tags":
+            musica.tags != null ? musica.tags!.map((e) => e.id).toList() : [],
+        "generos": List.from(musica.generos.map((e) => e.id).toList())
       };
 
   Future<Map<String, dynamic>> getMusica(String id) async {

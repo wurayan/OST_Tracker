@@ -34,9 +34,9 @@ class Musica {
         artista = map["artista"],
         link = map["link"],
         anotacoes = map["anotacoes"]??"",
-        generos = map["generos"],
+        generos = map["generos"]??[],
         // map["generos"] as List<String>,
-        tags = map["tags"],
+        tags = map["tags"]??[],
         // map["tags"]??[] as List<String>,
         dono = map["dono"],
         publico = map["publico"];

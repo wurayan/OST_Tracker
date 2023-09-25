@@ -13,6 +13,9 @@ class Genero {
   static Genero addGenero =
       Genero(id: "", nome: "ADD", dono: "", publico: true);
 
+  static Genero generoEllipsis =
+      Genero(id: "", nome: "...", dono: "", publico: true);
+
   Genero.fromMap(Map<String, dynamic> map)
       : id = map["id"],
         nome = map["nome"],
@@ -34,10 +37,10 @@ class Genero {
   bool operator ==(Object other) {
     if (other.runtimeType != runtimeType) return false;
     return other is Genero &&
-      other.id==id&&
-      other.nome==nome&&
-      other.dono==dono&&
-      other.publico==publico; 
+        other.id == id &&
+        other.nome == nome &&
+        other.dono == dono &&
+        other.publico == publico;
   }
 
   @override

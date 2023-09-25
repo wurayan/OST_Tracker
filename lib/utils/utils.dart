@@ -24,6 +24,22 @@ List<InlineSpan> tagBuilder(List<Tag> tags) {
       .toList();
 }
 
+List<Widget> tagBuilderWidget(List<Tag> tags) {
+  return tags
+      .map((e) => TagChip(
+            tag: e,
+          ))
+      .toList();
+}
+
+List<Widget> generoBuilderWidget(List<Genero> generos) {
+  return generos
+      .map((e) => GeneroChip(
+            genero: e,
+          ))
+      .toList();
+}
+
 List<Color> tagColors = [
   const Color(0xff79BAFF),
   const Color(0xffD99DFF),

@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ost_tracker_og/components/genero_chip.dart';
+import 'package:ost_tracker_og/components/overflow_Chip_Itens.dart';
+import 'package:ost_tracker_og/components/tag_chip.dart';
 import 'package:ost_tracker_og/decoration/shadows.dart';
 import 'package:ost_tracker_og/decoration/theme.dart';
+import 'package:ost_tracker_og/models/genero_model.dart';
 import 'package:ost_tracker_og/models/musica_model.dart';
+import 'package:ost_tracker_og/models/tag_model.dart';
 import 'package:ost_tracker_og/screens/musica/musica_details.dart';
 import 'package:ost_tracker_og/utils/utils.dart';
 
@@ -25,7 +30,7 @@ class MusicaCard extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: 16),
         child: Container(
-          height: height * 0.175,
+          height: height * 0.18,
           width: double.infinity,
           decoration: BoxDecoration(
               boxShadow: const [Shadows.shadowMid],
@@ -60,18 +65,29 @@ class MusicaCard extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4),
-                    child: RichText(
-                      text: TextSpan(
-                          children: [...generoBuilder(musica.generos)]),
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      softWrap: true,
+                    padding: const EdgeInsets.only(top: 4),
+                    child: Row(
+                      children: [
+                        OverflowChipItens(
+                          overflow: GeneroChip(genero: Genero.generoEllipsis),
+                          width: width * 0.6,
+                          children: [
+                            ...generoBuilderWidget(musica.generos),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                  RichText(
-                    text:
-                        TextSpan(children: [...tagBuilder(musica.tags ?? [])]),
+                  Row(
+                    children: [
+                      OverflowChipItens(
+                        overflow: TagChip(tag: Tag.tagEllipsis),
+                        width: width * 0.6,
+                        children: [
+                          ...tagBuilderWidget(musica.tags ?? []),
+                        ],
+                      )
+                    ],
                   )
                 ],
               )

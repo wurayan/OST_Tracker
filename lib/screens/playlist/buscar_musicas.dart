@@ -48,7 +48,8 @@ class _BuscarMusicasState extends State<BuscarMusicas> {
       ),
       drawer: const DrawerCustom(),
       floatingActionButton: Fab(
-          title: "      VOLTAR      ", function: () => Navigator.pop(context, escolhidas)),
+          title: "      VOLTAR      ",
+          function: () => Navigator.pop(context, escolhidas)),
       body: BlocBuilder<MusicaCubit, MusicaStates>(
         bloc: _musica,
         builder: (context, state) {
@@ -90,6 +91,7 @@ class _BuscarMusicasState extends State<BuscarMusicas> {
     } else {
       escolhidas.add(musica.id);
       firestore.addMusica(widget.playlist.id, musica);
+      if (mounted) setState(() {});
     }
   }
 }

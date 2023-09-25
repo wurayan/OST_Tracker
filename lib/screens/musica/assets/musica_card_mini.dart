@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ost_tracker_og/components/overflow_Chip_Itens.dart';
+import 'package:ost_tracker_og/components/tag_chip.dart';
 import 'package:ost_tracker_og/decoration/shadows.dart';
 import 'package:ost_tracker_og/decoration/theme.dart';
 import 'package:ost_tracker_og/models/musica_model.dart';
+import 'package:ost_tracker_og/models/tag_model.dart';
 import 'package:ost_tracker_og/screens/musica/musica_details.dart';
 import 'package:ost_tracker_og/utils/utils.dart';
 
@@ -66,12 +69,13 @@ class MusicaCardMini extends StatelessWidget {
                   Text(musica.artista,
                       style: CustomTextTheme.musicaCardSecondary),
                   Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: RichText(
-                      text: TextSpan(
-                          children: [...tagBuilder(musica.tags ?? [])]),
-                    ),
-                  )
+                      padding: const EdgeInsets.only(top: 7),
+                      child: Row(children: [
+                        OverflowChipItens(
+                            overflow: TagChip(tag: Tag.tagEllipsis),
+                            width: width * 0.6,
+                            children: [...tagBuilderWidget(musica.tags ?? [])])
+                      ]))
                 ],
               )
             ],

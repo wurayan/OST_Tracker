@@ -15,6 +15,9 @@ class Tag {
   static Tag addTag =
       Tag(id: "", nome: "ADD", descricao: "", dono: "", publico: true);
 
+  static Tag tagEllipsis =
+      Tag(id: "", nome: "...", descricao: "", dono: "", publico: true);
+
   @override
   String toString() {
     return "$id\n$nome\n$dono";

@@ -20,13 +20,12 @@ class MusicaFirestore {
       map["id"] = musica.id;
       Map<String, dynamic> userMap = await _user.getMusica(map["id"]);
       map["anotacoes"] = userMap["anotacoes"];
-      map["generos"] = await Future.wait(List.from(userMap["generos"])
+      map["generos"] = await Future.wait(List.from(userMap["generos"] ?? [])
           .map((e) async => await _genero.getOnlyGenero(e))
           .toList());
-      map["tags"] = await Future.wait(List.from(userMap["tags"])
+      map["tags"] = await Future.wait(List.from(userMap["tags"] ?? [])
           .map((e) async => await _tag.getOnlyTag(e))
           .toList());
-      print(map);
       musicas.add(Musica.fromMap(map));
     }
     return musicas;
